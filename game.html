@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="theme-color" content="#0f1117" />
+<title>Indie Dev Tycoon</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ============ START / NEW GAME SCREEN ============ -->
+<div id="start-screen" class="screen-start">
+  <div class="start-card">
+    <h1>INDIE DEV TYCOON</h1>
+    <p class="subtitle">Build your studio. Ship your games. Survive the industry.</p>
+
+    <div class="start-form">
+      <label>Studio name
+        <input id="in-studio" type="text" maxlength="24" placeholder="Pixel Forge" />
+      </label>
+      <label>Developer name
+        <input id="in-name" type="text" maxlength="20" placeholder="Alex" />
+      </label>
+      <label>Country
+        <select id="in-country"></select>
+      </label>
+      <label>Start year
+        <select id="in-year"></select>
+      </label>
+      <label>Difficulty
+        <select id="in-diff">
+          <option value="easy">Easy</option>
+          <option value="normal" selected>Normal</option>
+          <option value="hard">Hard</option>
+        </select>
+      </label>
+    </div>
+
+    <button id="btn-start" class="btn-primary big">START STUDIO</button>
+    <button id="btn-continue" class="btn-ghost big" style="display:none">CONTINUE SAVED GAME</button>
+
+    <p class="credit">Game by @braskov1ch · v0.1beta · © 2026</p>
+  </div>
+</div>
+
+<!-- ============ MAIN APP ============ -->
+<div id="app" style="display:none">
+  <header id="topbar">
+    <div class="tb-left">
+      <div id="tb-studio">Studio</div>
+      <div id="tb-date">1 Jan 2008</div>
+    </div>
+    <div class="tb-right">
+      <div class="speed-group">
+        <button data-speed="0" class="spd">⏸</button>
+        <button data-speed="1" class="spd active">▶</button>
+        <button data-speed="2" class="spd">▶▶</button>
+        <button data-speed="5" class="spd">▶▶▶</button>
+        <button data-speed="10" class="spd">▶▶▶▶</button>
+      </div>
+      <button id="btn-step-day" class="tb-mini">+1д</button>
+      <button id="btn-step-week" class="tb-mini">+7д</button>
+    </div>
+  </header>
+
+  <main id="main"></main>
+
+  <nav id="bottomnav">
+    <button data-tab="dashboard" class="active"><span>🏠</span>Обзор</button>
+    <button data-tab="projects"><span>🎮</span>Проекты</button>
+    <button data-tab="studio"><span>👥</span>Студия</button>
+    <button data-tab="market"><span>📊</span>Рынок</button>
+    <button data-tab="news"><span>📰</span>Новости</button>
+    <button data-tab="more"><span>⚙️</span>Ещё</button>
+  </nav>
+</div>
+
+<div id="modal-root"></div>
+<div id="toast-root"></div>
+
+<script src="js/data.js"></script>
+<script src="js/core.js"></script>
+<script src="js/economy.js"></script>
+<script src="js/projects.js"></script>
+<script src="js/systems.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
